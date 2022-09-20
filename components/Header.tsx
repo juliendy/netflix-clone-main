@@ -23,11 +23,10 @@ function Header() {
     },[])
 
   return (
-    // using effect with logical and operand to set color value
     <header className={`${isScrolled && 'bg-[#141414]'}`}>
-      // space-x = space between in x-axis ie margin-left. 10=40px/2.5rem
-      // md: (medium) refers to responsiveness ie @media (min-width: 768px)
+      {/* using effect with logical and operand to set color value */}
       <div className="flex items-center space-x-2 md:space-x-10">
+        {/* space-x = space between in x-axis ie margin-left. 10=40px/2.5rem. md: (medium) refers to responsiveness ie @media (min-width: 768px) */}
         <img
           src="https://rb.gy/ulxxee"
           width={100}
@@ -43,8 +42,8 @@ function Header() {
           <li className="headerLink">My List</li>
         </ul>
       </div>
-      // sm: (small) @media (min-width: 640px)
       <div className="flex items-center space-x-4 text-sm font-light">
+        {/* sm: (small) @media (min-width: 640px) */}
         <SearchIcon className="sm hidden h-6 w-6 sm:inline" />
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6" />
