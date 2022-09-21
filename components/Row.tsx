@@ -1,6 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 import { useRef, useState } from 'react'
-import { FaLess } from 'react-icons/fa'
 import { Movie } from '../typings'
 import Thumbnail from './Thumbnail'
 
@@ -15,10 +14,13 @@ function Row({ title, movies }: Props) {
   const rowRef = useRef<HTMLDivElement>(null)
   const [isMoved, setIsMoved] = useState(false)
 
+  // handleClick function is defined here, depending on where the user clicks.
   const handleClick = (direction: string) => {
+    // setting the state to true (line 15 is where the state is defined)
     setIsMoved(true)
-
+    // we get the current ref of the object (the hole container div holding the arrows + rows)
     if (rowRef.current) {
+      // client width is the width of the row that is visible in the browser.
       const { scrollLeft, clientWidth } = rowRef.current
       const scrollTo =
         direction === 'left'
@@ -28,6 +30,8 @@ function Row({ title, movies }: Props) {
         rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"})
     }
   }
+  // logging to see which width we are at in the browser console.
+  // console.log(rowRef.current!.scrollLeft, rowRef.current!.clientWidth)
 
   return (
     <div className="h-40 space-y-0.5 md:space-y-2">
