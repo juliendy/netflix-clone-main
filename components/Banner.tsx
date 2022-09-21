@@ -18,7 +18,7 @@ function Banner({ netflixOriginals }: Props) {
     setMovie(
       netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
     )
-    // this is depended on the netflixOriginals. everytime the array runs, it will set a different to a different movie.
+    // this is depended on the netflixOriginals. everytime the array runs, it will load a different movie.
   }, [netflixOriginals])
 
   return (

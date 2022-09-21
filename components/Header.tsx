@@ -7,7 +7,7 @@ function Header() {
     
     useEffect(() => {
         const handleScroll = () => {
-          // if on top of the page (y-axis) show the header
+          // if not on top of the page (y-axis) show the header
             if (window.scrollY > 0) {
                 setIsScrolled(true)
             } else {
